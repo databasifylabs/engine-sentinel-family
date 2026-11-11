@@ -1,0 +1,22 @@
+[sync_reader]
+sync_rdb = true
+sync_aof = true
+cluster = false
+address = "10.0.0.5:6379"
+username = "default"
+password = "s\"ecret"
+tls = true
+
+[redis_writer]
+cluster = false
+address = "127.0.0.1:6379"
+password = "local"
+tls = false
+
+[advanced]
+dir = "/srv/valkey/migration"
+status_port = 0
+log_file = "shake.log"
+log_level = "info"
+log_interval = 5
+rdb_restore_command_behavior = "rewrite"
